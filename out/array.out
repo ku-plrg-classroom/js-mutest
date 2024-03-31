@@ -1,0 +1,7 @@
+Mutant #1 [block] [1:27-8:2] `{ ... }` -> `{}`
+Mutant #2 [array] [2:16-2:38] `new Array(a, b, a + b)` -> `new Array()`
+Mutant #3 [arith] [2:32-2:37] `a + b` -> `a - b`
+Mutant #4 [array] [4:16-4:29] `[c, d, c - d]` -> `[]`
+Mutant #5 [arith] [4:23-4:28] `c - d` -> `c + d`
+Mutant #6 [arith] [6:25-6:30] `x + y` -> `x - y`
+Mutant #7 [arith] [7:10-7:51] `arr1.reduce(add, 0) + arr2.reduce(add, 0)` -> `arr1.reduce(add, 0) - arr2.reduce(add, 0)`

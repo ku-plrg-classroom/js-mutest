@@ -1,0 +1,15 @@
+Mutant #1 [block] [1:28-6:2] `{ ... }` -> `{}`
+Mutant #2 [array] [2:10-5:4] `[
+  [ a++, b--, --c, ++d ],
+  [ a, b, c, d ]
+]` -> `[]`
+Mutant #3 [array] [3:5-3:27] `[ a++, b--, --c, ++d ]` -> `[]`
+Mutant #4 [update] [3:7-3:10] `a++` -> `++a`
+Mutant #5 [update] [3:7-3:10] `a++` -> `a--`
+Mutant #6 [update] [3:12-3:15] `b--` -> `--b`
+Mutant #7 [update] [3:12-3:15] `b--` -> `b++`
+Mutant #8 [update] [3:17-3:20] `--c` -> `c--`
+Mutant #9 [update] [3:17-3:20] `--c` -> `++c`
+Mutant #10 [update] [3:22-3:25] `++d` -> `d++`
+Mutant #11 [update] [3:22-3:25] `++d` -> `--d`
+Mutant #12 [array] [4:5-4:19] `[ a, b, c, d ]` -> `[]`

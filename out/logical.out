@@ -1,0 +1,10 @@
+Mutant #1 [block] [1:23-3:2] `{
+return [x && y, x || y, x ?? y];
+}` -> `{}`
+Mutant #2 [array] [2:10-2:34] `[x && y, x || y, x ?? y]` -> `[]`
+Mutant #3 [logical] [2:11-2:17] `x && y` -> `x || y`
+Mutant #4 [logical] [2:11-2:17] `x && y` -> `x ?? y`
+Mutant #5 [logical] [2:19-2:25] `x || y` -> `x && y`
+Mutant #6 [logical] [2:19-2:25] `x || y` -> `x ?? y`
+Mutant #7 [logical] [2:27-2:33] `x ?? y` -> `x && y`
+Mutant #8 [logical] [2:27-2:33] `x ?? y` -> `x || y`

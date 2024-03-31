@@ -1,0 +1,9 @@
+Mutant #1 [block] [1:33-6:2] `{ ... }` -> `{}`
+Mutant #2 [arith] [2:13-2:18] `a + b` -> `a - b`
+Mutant #3 [arith] [3:13-3:18] `c * d` -> `c / d`
+Mutant #4 [arith] [3:13-3:18] `c * d` -> `c % d`
+Mutant #5 [arith] [4:13-4:18] `e / f` -> `e * f`
+Mutant #6 [arith] [4:13-4:18] `e / f` -> `e % f`
+Mutant #7 [arith] [5:10-5:19] `x - y % z` -> `x + y % z`
+Mutant #8 [arith] [5:14-5:19] `y % z` -> `y * z`
+Mutant #9 [arith] [5:14-5:19] `y % z` -> `y / z`

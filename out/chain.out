@@ -1,0 +1,13 @@
+Mutant #1 [block] [1:20-9:2] `{ ... }` -> `{}`
+Mutant #2 [array] [2:10-8:4] `[
+  obj?.x,
+  obj?.['y'],
+  obj.z?.(),
+  obj?.x?.y.z,
+  obj?.z?.()['x'].y?.z,
+]` -> `[]`
+Mutant #3 [opt-chain] [3:5-3:11] `obj?.x` -> `obj.x`
+Mutant #4 [opt-chain] [4:5-4:15] `obj?.['y']` -> `obj['y']`
+Mutant #5 [opt-chain] [5:5-5:14] `obj.z?.()` -> `obj.z()`
+Mutant #6 [opt-chain] [6:5-6:16] `obj?.x?.y.z` -> `obj.x.y.z`
+Mutant #7 [opt-chain] [7:5-7:25] `obj?.z?.()['x'].y?.z` -> `obj.z()['x'].y.z`

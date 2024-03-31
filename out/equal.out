@@ -1,0 +1,27 @@
+Mutant #1 [block] [1:21-12:2] `{ ... }` -> `{}`
+Mutant #2 [array] [2:10-11:4] `[
+  x < y,
+  x <= y,
+  x > y,
+  x >= y,
+  x == y,
+  x != y,
+  x === y,
+  x !== y,
+]` -> `[]`
+Mutant #3 [equal] [3:5-3:10] `x < y` -> `x <= y`
+Mutant #4 [equal] [3:5-3:10] `x < y` -> `x >= y`
+Mutant #5 [equal] [4:5-4:11] `x <= y` -> `x < y`
+Mutant #6 [equal] [4:5-4:11] `x <= y` -> `x > y`
+Mutant #7 [equal] [5:5-5:10] `x > y` -> `x >= y`
+Mutant #8 [equal] [5:5-5:10] `x > y` -> `x <= y`
+Mutant #9 [equal] [6:5-6:11] `x >= y` -> `x > y`
+Mutant #10 [equal] [6:5-6:11] `x >= y` -> `x < y`
+Mutant #11 [equal] [7:5-7:11] `x == y` -> `x != y`
+Mutant #12 [equal] [7:5-7:11] `x == y` -> `x === y`
+Mutant #13 [equal] [8:5-8:11] `x != y` -> `x == y`
+Mutant #14 [equal] [8:5-8:11] `x != y` -> `x !== y`
+Mutant #15 [equal] [9:5-9:12] `x === y` -> `x !== y`
+Mutant #16 [equal] [9:5-9:12] `x === y` -> `x == y`
+Mutant #17 [equal] [10:5-10:12] `x !== y` -> `x === y`
+Mutant #18 [equal] [10:5-10:12] `x !== y` -> `x != y`

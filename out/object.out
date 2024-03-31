@@ -1,0 +1,4 @@
+Mutant #1 [block] [1:22-6:2] `{ ... }` -> `{}`
+Mutant #2 [object] [2:14-2:22] `{ x: x }` -> `{}`
+Mutant #3 [object] [3:14-3:19] `{ y }` -> `{}`
+Mutant #4 [array] [5:10-5:34] `[obj1.x, obj2.y, obj3.z]` -> `[]`

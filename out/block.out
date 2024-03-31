@@ -1,0 +1,32 @@
+Mutant #1 [block] [1:18-13:2] `{ ... }` -> `{}`
+Mutant #2 [block] [2:3-4:4] `{
+  var a = x++;
+}` -> `{}`
+Mutant #3 [update] [3:13-3:16] `x++` -> `++x`
+Mutant #4 [update] [3:13-3:16] `x++` -> `x--`
+Mutant #5 [block] [5:16-7:4] `{
+  return x--;
+}` -> `{}`
+Mutant #6 [update] [6:12-6:15] `x--` -> `--x`
+Mutant #7 [update] [6:12-6:15] `x--` -> `x++`
+Mutant #8 [cond] [8:3-11:13] `if (x > 0) {
+  var b = f();
+  var c = x;
+} else { }` -> `if (true) {
+  var b = f();
+  var c = x;
+} else {}`
+Mutant #9 [cond] [8:3-11:13] `if (x > 0) {
+  var b = f();
+  var c = x;
+} else { }` -> `if (false) {
+  var b = f();
+  var c = x;
+} else {}`
+Mutant #10 [equal] [8:7-8:12] `x > 0` -> `x >= 0`
+Mutant #11 [equal] [8:7-8:12] `x > 0` -> `x <= 0`
+Mutant #12 [block] [8:14-11:4] `{
+  var b = f();
+  var c = x;
+}` -> `{}`
+Mutant #13 [array] [12:10-12:19] `[a, b, c]` -> `[]`

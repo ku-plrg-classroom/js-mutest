@@ -1,0 +1,25 @@
+Mutant #1 [block] [1:17-10:2] `{ ... }` -> `{}`
+Mutant #2 [array] [2:10-9:4] `[
+  true && x,
+  false && x,
+  true || x,
+  false || x,
+  true ? x : 0,
+  false ? 0 : x,
+]` -> `[]`
+Mutant #3 [logical] [3:5-3:14] `true && x` -> `true || x`
+Mutant #4 [logical] [3:5-3:14] `true && x` -> `true ?? x`
+Mutant #5 [bool] [3:5-3:9] `true` -> `false`
+Mutant #6 [logical] [4:5-4:15] `false && x` -> `false || x`
+Mutant #7 [logical] [4:5-4:15] `false && x` -> `false ?? x`
+Mutant #8 [bool] [4:5-4:10] `false` -> `true`
+Mutant #9 [logical] [5:5-5:14] `true || x` -> `true && x`
+Mutant #10 [logical] [5:5-5:14] `true || x` -> `true ?? x`
+Mutant #11 [bool] [5:5-5:9] `true` -> `false`
+Mutant #12 [logical] [6:5-6:15] `false || x` -> `false && x`
+Mutant #13 [logical] [6:5-6:15] `false || x` -> `false ?? x`
+Mutant #14 [bool] [6:5-6:10] `false` -> `true`
+Mutant #15 [cond] [7:5-7:17] `true ? x : 0` -> `false ? x : 0`
+Mutant #16 [bool] [7:5-7:9] `true` -> `false`
+Mutant #17 [cond] [8:5-8:18] `false ? 0 : x` -> `true ? 0 : x`
+Mutant #18 [bool] [8:5-8:10] `false` -> `true`

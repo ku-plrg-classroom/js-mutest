@@ -1,0 +1,11 @@
+Mutant #1 [block] [1:57-14:2] `{ ... }` -> `{}`
+Mutant #2 [assign] [3:3-3:15] `result += x1` -> `result -= x1`
+Mutant #3 [assign] [4:3-4:15] `result -= x2` -> `result += x2`
+Mutant #4 [assign] [5:3-5:15] `result *= x3` -> `result /= x3`
+Mutant #5 [assign] [6:3-6:15] `result /= x4` -> `result *= x4`
+Mutant #6 [assign] [7:3-7:15] `result %= x5` -> `result *= x5`
+Mutant #7 [assign] [8:3-8:16] `result <<= x6` -> `result >>= x6`
+Mutant #8 [assign] [9:3-9:16] `result >>= x7` -> `result <<= x7`
+Mutant #9 [assign] [10:3-10:15] `result &= x8` -> `result |= x8`
+Mutant #10 [assign] [11:3-11:15] `result |= x9` -> `result &= x9`
+Mutant #11 [assign] [12:3-12:17] `result ??= x10` -> `result &&= x10`

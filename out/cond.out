@@ -1,0 +1,27 @@
+Mutant #1 [block] [1:17-11:2] `{ ... }` -> `{}`
+Mutant #2 [cond] [2:3-2:28] `for (; n == 5;) return 0;` -> `for (; false; ) return 0;`
+Mutant #3 [equal] [2:10-2:16] `n == 5` -> `n != 5`
+Mutant #4 [equal] [2:10-2:16] `n == 5` -> `n === 5`
+Mutant #5 [cond] [3:3-3:27] `while (n == 7) return 1;` -> `while (false) return 1;`
+Mutant #6 [equal] [3:10-3:16] `n == 7` -> `n != 7`
+Mutant #7 [equal] [3:10-3:16] `n == 7` -> `n === 7`
+Mutant #8 [logical] [4:12-4:19] `n || 42` -> `n && 42`
+Mutant #9 [logical] [4:12-4:19] `n || 42` -> `n ?? 42`
+Mutant #10 [cond] [5:3-5:32] `do x1++; while (x1 % 2 == 1);` -> `do x1++; while (false);`
+Mutant #11 [equal] [5:19-5:30] `x1 % 2 == 1` -> `x1 % 2 != 1`
+Mutant #12 [equal] [5:19-5:30] `x1 % 2 == 1` -> `x1 % 2 === 1`
+Mutant #13 [arith] [5:19-5:25] `x1 % 2` -> `x1 * 2`
+Mutant #14 [arith] [5:19-5:25] `x1 % 2` -> `x1 / 2`
+Mutant #15 [update] [5:6-5:10] `x1++` -> `++x1`
+Mutant #16 [update] [5:6-5:10] `x1++` -> `x1--`
+Mutant #17 [cond] [7:3-8:15] `if (n < 13) x2 = 0;
+else x2 = 1;` -> `if (true) x2 = 0; else x2 = 1;`
+Mutant #18 [cond] [7:3-8:15] `if (n < 13) x2 = 0;
+else x2 = 1;` -> `if (false) x2 = 0; else x2 = 1;`
+Mutant #19 [equal] [7:7-7:13] `n < 13` -> `n <= 13`
+Mutant #20 [equal] [7:7-7:13] `n < 13` -> `n >= 13`
+Mutant #21 [cond] [9:12-9:26] `n < 21 ? 0 : 1` -> `true ? 0 : 1`
+Mutant #22 [cond] [9:12-9:26] `n < 21 ? 0 : 1` -> `false ? 0 : 1`
+Mutant #23 [equal] [9:12-9:18] `n < 21` -> `n <= 21`
+Mutant #24 [equal] [9:12-9:18] `n < 21` -> `n >= 21`
+Mutant #25 [array] [10:10-10:22] `[x1, x2, x3]` -> `[]`

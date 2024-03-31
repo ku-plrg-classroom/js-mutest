@@ -1,0 +1,6 @@
+Mutant #1 [block] [1:18-3:2] `{
+return +x + -x;
+}` -> `{}`
+Mutant #2 [arith] [2:10-2:17] `+x + -x` -> `+x - -x`
+Mutant #3 [unary] [2:10-2:12] `+x` -> `-x`
+Mutant #4 [unary] [2:15-2:17] `-x` -> `+x`
