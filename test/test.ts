@@ -133,16 +133,19 @@ const expectedMaps: {
       [ArrayDecl,       { killed: 1,    total: 1 }],
       [BlockStmt,       { killed: 1,    total: 1 }],
       [OptionalChain,   { killed: 0,    total: 5 }],
+      [StringLiteral,   { killed: 0,    total: 2 }],
     ],
     "chain-2": [
       [ArrayDecl,       { killed: 1,    total: 1 }],
       [BlockStmt,       { killed: 1,    total: 1 }],
       [OptionalChain,   { killed: 2,    total: 5 }],
+      [StringLiteral,   { killed: 0,    total: 2 }],
     ],
     "chain-3": [
       [ArrayDecl,       { killed: 1,    total: 1 }],
       [BlockStmt,       { killed: 1,    total: 1 }],
       [OptionalChain,   { killed: 5,    total: 5 }],
+      [StringLiteral,   { killed: 0,    total: 2 }],
     ],
   },
   "cond": {

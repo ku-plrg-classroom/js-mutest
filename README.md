@@ -419,7 +419,7 @@ generating a test suite for the [`example/vector.js`](./example/vector.js)
 JavaScript file that kills all the generated mutants.
 
 The current `vectorInputs` contains the following inputs and kills only **7 out
-of 220** mutants:
+of 221** mutants:
 
 ```javascript
 export const vectorInputs: [string][] = [
