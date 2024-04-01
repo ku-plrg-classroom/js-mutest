@@ -139,6 +139,7 @@ export class Mutator {
         return;
       }
       // Recursively mutate the arguments if it is not the assertion function
+      walk.recursive(callee, null, visitor);
       for (const arg of args) walk.recursive(arg, null, visitor);
     }
   }

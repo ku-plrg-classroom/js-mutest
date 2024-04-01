@@ -63,8 +63,9 @@ Mutant #40 [block] [41:23-47:6] `{ ... }` -> `{}`
 Mutant #41 [block] [43:32-45:8] `{
   elements.push(fn(x, i));
 }` -> `{}`
-Mutant #42 [block] [50:24-56:6] `{ ... }` -> `{}`
-Mutant #43 [cond] [52:7-55:21] `do { i = k - n;
+Mutant #42 [string] [46:21-46:29] `'create'` -> `""`
+Mutant #43 [block] [50:24-56:6] `{ ... }` -> `{}`
+Mutant #44 [cond] [52:7-55:21] `do { i = k - n;
   fn(this.elements[i], i+1);
   __assert__(0 < n && n <= this.elements.length);
 } while (--n);` -> `do {
@@ -72,164 +73,164 @@ Mutant #43 [cond] [52:7-55:21] `do { i = k - n;
   fn(this.elements[i], i + 1);
   __assert__(0 < n && n <= this.elements.length);
 } while (false);`
-Mutant #44 [update] [55:16-55:19] `--n` -> `n--`
-Mutant #45 [update] [55:16-55:19] `--n` -> `++n`
-Mutant #46 [block] [52:10-55:8] `{ ... }` -> `{}`
-Mutant #47 [arith] [52:16-52:21] `k - n` -> `k + n`
-Mutant #48 [arith] [53:30-53:33] `i+1` -> `i - 1`
-Mutant #49 [block] [59:33-73:6] `{ ... }` -> `{}`
-Mutant #50 [logical] [60:15-60:41] `vector?.elements || vector` -> `vector?.elements && vector`
-Mutant #51 [logical] [60:15-60:41] `vector?.elements || vector` -> `vector?.elements ?? vector`
-Mutant #52 [opt-chain] [60:15-60:31] `vector?.elements` -> `vector.elements`
-Mutant #53 [cond] [62:7-62:42] `if (n != V.length) { return null; }` -> `if (true) {
+Mutant #45 [update] [55:16-55:19] `--n` -> `n--`
+Mutant #46 [update] [55:16-55:19] `--n` -> `++n`
+Mutant #47 [block] [52:10-55:8] `{ ... }` -> `{}`
+Mutant #48 [arith] [52:16-52:21] `k - n` -> `k + n`
+Mutant #49 [arith] [53:30-53:33] `i+1` -> `i - 1`
+Mutant #50 [block] [59:33-73:6] `{ ... }` -> `{}`
+Mutant #51 [logical] [60:15-60:41] `vector?.elements || vector` -> `vector?.elements && vector`
+Mutant #52 [logical] [60:15-60:41] `vector?.elements || vector` -> `vector?.elements ?? vector`
+Mutant #53 [opt-chain] [60:15-60:31] `vector?.elements` -> `vector.elements`
+Mutant #54 [cond] [62:7-62:42] `if (n != V.length) { return null; }` -> `if (true) {
   return null;
 }`
-Mutant #54 [cond] [62:7-62:42] `if (n != V.length) { return null; }` -> `if (false) {
+Mutant #55 [cond] [62:7-62:42] `if (n != V.length) { return null; }` -> `if (false) {
   return null;
 }`
-Mutant #55 [equal] [62:11-62:24] `n != V.length` -> `n == V.length`
-Mutant #56 [equal] [62:11-62:24] `n != V.length` -> `n !== V.length`
-Mutant #57 [block] [62:26-62:42] `{ return null; }` -> `{}`
-Mutant #58 [block] [65:32-69:8] `{ ... }` -> `{}`
-Mutant #59 [assign] [66:9-66:26] `dot += x * V[i-1]` -> `dot -= x * V[i - 1]`
-Mutant #60 [arith] [66:16-66:26] `x * V[i-1]` -> `x / V[i - 1]`
-Mutant #61 [arith] [66:16-66:26] `x * V[i-1]` -> `x % V[i - 1]`
-Mutant #62 [arith] [66:22-66:25] `i-1` -> `i + 1`
-Mutant #63 [assign] [67:9-67:22] `mod1 += x * x` -> `mod1 -= x * x`
-Mutant #64 [arith] [67:17-67:22] `x * x` -> `x / x`
-Mutant #65 [arith] [67:17-67:22] `x * x` -> `x % x`
-Mutant #66 [assign] [68:9-68:32] `mod2 += V[i-1] * V[i-1]` -> `mod2 -= V[i - 1] * V[i - 1]`
-Mutant #67 [arith] [68:17-68:32] `V[i-1] * V[i-1]` -> `V[i - 1] / V[i - 1]`
-Mutant #68 [arith] [68:17-68:32] `V[i-1] * V[i-1]` -> `V[i - 1] % V[i - 1]`
-Mutant #69 [arith] [68:19-68:22] `i-1` -> `i + 1`
-Mutant #70 [arith] [68:28-68:31] `i-1` -> `i + 1`
-Mutant #71 [arith] [71:19-71:36] `dot / (mod1*mod2)` -> `dot * (mod1 * mod2)`
-Mutant #72 [arith] [71:19-71:36] `dot / (mod1*mod2)` -> `dot % (mod1 * mod2)`
-Mutant #73 [arith] [71:26-71:35] `mod1*mod2` -> `mod1 / mod2`
-Mutant #74 [arith] [71:26-71:35] `mod1*mod2` -> `mod1 % mod2`
-Mutant #75 [unary] [72:14-72:31] `+Math.acos(theta)` -> `-Math.acos(theta)`
-Mutant #76 [block] [76:36-79:6] `{ ... }` -> `{}`
-Mutant #77 [cond] [78:14-78:50] `(angle === null) ? null : angle == 0` -> `true ? null : angle == 0`
-Mutant #78 [cond] [78:14-78:50] `(angle === null) ? null : angle == 0` -> `false ? null : angle == 0`
-Mutant #79 [equal] [78:15-78:29] `angle === null` -> `angle !== null`
-Mutant #80 [equal] [78:40-78:50] `angle == 0` -> `angle != 0`
-Mutant #81 [equal] [78:40-78:50] `angle == 0` -> `angle === 0`
-Mutant #82 [block] [82:40-85:6] `{ ... }` -> `{}`
-Mutant #83 [cond] [84:14-84:57] `(angle === null) ? null : angle == +Math.PI` -> `true ? null : angle == +Math.PI`
-Mutant #84 [cond] [84:14-84:57] `(angle === null) ? null : angle == +Math.PI` -> `false ? null : angle == +Math.PI`
-Mutant #85 [equal] [84:15-84:29] `angle === null` -> `angle !== null`
-Mutant #86 [equal] [84:40-84:57] `angle == +Math.PI` -> `angle != +Math.PI`
-Mutant #87 [equal] [84:40-84:57] `angle == +Math.PI` -> `angle === +Math.PI`
-Mutant #88 [unary] [84:49-84:57] `+Math.PI` -> `-Math.PI`
-Mutant #89 [block] [88:41-91:6] `{ ... }` -> `{}`
-Mutant #90 [cond] [90:14-90:46] `(dot === null) ? null : dot == 0` -> `true ? null : dot == 0`
-Mutant #91 [cond] [90:14-90:46] `(dot === null) ? null : dot == 0` -> `false ? null : dot == 0`
-Mutant #92 [equal] [90:15-90:27] `dot === null` -> `dot !== null`
-Mutant #93 [equal] [90:38-90:46] `dot == 0` -> `dot != 0`
-Mutant #94 [equal] [90:38-90:46] `dot == 0` -> `dot === 0`
-Mutant #95 [block] [94:27-98:6] `{ ... }` -> `{}`
-Mutant #96 [logical] [95:15-95:41] `vector?.elements || vector` -> `vector?.elements && vector`
-Mutant #97 [logical] [95:15-95:41] `vector?.elements || vector` -> `vector?.elements ?? vector`
-Mutant #98 [opt-chain] [95:15-95:31] `vector?.elements` -> `vector.elements`
-Mutant #99 [cond] [96:7-96:61] `if (this.elements.length != V.length) { return null; }` -> `if (true) {
+Mutant #56 [equal] [62:11-62:24] `n != V.length` -> `n == V.length`
+Mutant #57 [equal] [62:11-62:24] `n != V.length` -> `n !== V.length`
+Mutant #58 [block] [62:26-62:42] `{ return null; }` -> `{}`
+Mutant #59 [block] [65:32-69:8] `{ ... }` -> `{}`
+Mutant #60 [assign] [66:9-66:26] `dot += x * V[i-1]` -> `dot -= x * V[i - 1]`
+Mutant #61 [arith] [66:16-66:26] `x * V[i-1]` -> `x / V[i - 1]`
+Mutant #62 [arith] [66:16-66:26] `x * V[i-1]` -> `x % V[i - 1]`
+Mutant #63 [arith] [66:22-66:25] `i-1` -> `i + 1`
+Mutant #64 [assign] [67:9-67:22] `mod1 += x * x` -> `mod1 -= x * x`
+Mutant #65 [arith] [67:17-67:22] `x * x` -> `x / x`
+Mutant #66 [arith] [67:17-67:22] `x * x` -> `x % x`
+Mutant #67 [assign] [68:9-68:32] `mod2 += V[i-1] * V[i-1]` -> `mod2 -= V[i - 1] * V[i - 1]`
+Mutant #68 [arith] [68:17-68:32] `V[i-1] * V[i-1]` -> `V[i - 1] / V[i - 1]`
+Mutant #69 [arith] [68:17-68:32] `V[i-1] * V[i-1]` -> `V[i - 1] % V[i - 1]`
+Mutant #70 [arith] [68:19-68:22] `i-1` -> `i + 1`
+Mutant #71 [arith] [68:28-68:31] `i-1` -> `i + 1`
+Mutant #72 [arith] [71:19-71:36] `dot / (mod1*mod2)` -> `dot * (mod1 * mod2)`
+Mutant #73 [arith] [71:19-71:36] `dot / (mod1*mod2)` -> `dot % (mod1 * mod2)`
+Mutant #74 [arith] [71:26-71:35] `mod1*mod2` -> `mod1 / mod2`
+Mutant #75 [arith] [71:26-71:35] `mod1*mod2` -> `mod1 % mod2`
+Mutant #76 [unary] [72:14-72:31] `+Math.acos(theta)` -> `-Math.acos(theta)`
+Mutant #77 [block] [76:36-79:6] `{ ... }` -> `{}`
+Mutant #78 [cond] [78:14-78:50] `(angle === null) ? null : angle == 0` -> `true ? null : angle == 0`
+Mutant #79 [cond] [78:14-78:50] `(angle === null) ? null : angle == 0` -> `false ? null : angle == 0`
+Mutant #80 [equal] [78:15-78:29] `angle === null` -> `angle !== null`
+Mutant #81 [equal] [78:40-78:50] `angle == 0` -> `angle != 0`
+Mutant #82 [equal] [78:40-78:50] `angle == 0` -> `angle === 0`
+Mutant #83 [block] [82:40-85:6] `{ ... }` -> `{}`
+Mutant #84 [cond] [84:14-84:57] `(angle === null) ? null : angle == +Math.PI` -> `true ? null : angle == +Math.PI`
+Mutant #85 [cond] [84:14-84:57] `(angle === null) ? null : angle == +Math.PI` -> `false ? null : angle == +Math.PI`
+Mutant #86 [equal] [84:15-84:29] `angle === null` -> `angle !== null`
+Mutant #87 [equal] [84:40-84:57] `angle == +Math.PI` -> `angle != +Math.PI`
+Mutant #88 [equal] [84:40-84:57] `angle == +Math.PI` -> `angle === +Math.PI`
+Mutant #89 [unary] [84:49-84:57] `+Math.PI` -> `-Math.PI`
+Mutant #90 [block] [88:41-91:6] `{ ... }` -> `{}`
+Mutant #91 [cond] [90:14-90:46] `(dot === null) ? null : dot == 0` -> `true ? null : dot == 0`
+Mutant #92 [cond] [90:14-90:46] `(dot === null) ? null : dot == 0` -> `false ? null : dot == 0`
+Mutant #93 [equal] [90:15-90:27] `dot === null` -> `dot !== null`
+Mutant #94 [equal] [90:38-90:46] `dot == 0` -> `dot != 0`
+Mutant #95 [equal] [90:38-90:46] `dot == 0` -> `dot === 0`
+Mutant #96 [block] [94:27-98:6] `{ ... }` -> `{}`
+Mutant #97 [logical] [95:15-95:41] `vector?.elements || vector` -> `vector?.elements && vector`
+Mutant #98 [logical] [95:15-95:41] `vector?.elements || vector` -> `vector?.elements ?? vector`
+Mutant #99 [opt-chain] [95:15-95:31] `vector?.elements` -> `vector.elements`
+Mutant #100 [cond] [96:7-96:61] `if (this.elements.length != V.length) { return null; }` -> `if (true) {
   return null;
 }`
-Mutant #100 [cond] [96:7-96:61] `if (this.elements.length != V.length) { return null; }` -> `if (false) {
+Mutant #101 [cond] [96:7-96:61] `if (this.elements.length != V.length) { return null; }` -> `if (false) {
   return null;
 }`
-Mutant #101 [equal] [96:11-96:43] `this.elements.length != V.length` -> `this.elements.length == V.length`
-Mutant #102 [equal] [96:11-96:43] `this.elements.length != V.length` -> `this.elements.length !== V.length`
-Mutant #103 [block] [96:45-96:61] `{ return null; }` -> `{}`
-Mutant #104 [block] [97:38-97:60] `{ return x + V[i-1]; }` -> `{}`
-Mutant #105 [arith] [97:47-97:57] `x + V[i-1]` -> `x - V[i - 1]`
-Mutant #106 [arith] [97:53-97:56] `i-1` -> `i + 1`
-Mutant #107 [block] [101:32-105:6] `{ ... }` -> `{}`
-Mutant #108 [logical] [102:15-102:41] `vector?.elements || vector` -> `vector?.elements && vector`
-Mutant #109 [logical] [102:15-102:41] `vector?.elements || vector` -> `vector?.elements ?? vector`
-Mutant #110 [opt-chain] [102:15-102:31] `vector?.elements` -> `vector.elements`
-Mutant #111 [cond] [103:7-103:61] `if (this.elements.length != V.length) { return null; }` -> `if (true) {
+Mutant #102 [equal] [96:11-96:43] `this.elements.length != V.length` -> `this.elements.length == V.length`
+Mutant #103 [equal] [96:11-96:43] `this.elements.length != V.length` -> `this.elements.length !== V.length`
+Mutant #104 [block] [96:45-96:61] `{ return null; }` -> `{}`
+Mutant #105 [block] [97:38-97:60] `{ return x + V[i-1]; }` -> `{}`
+Mutant #106 [arith] [97:47-97:57] `x + V[i-1]` -> `x - V[i - 1]`
+Mutant #107 [arith] [97:53-97:56] `i-1` -> `i + 1`
+Mutant #108 [block] [101:32-105:6] `{ ... }` -> `{}`
+Mutant #109 [logical] [102:15-102:41] `vector?.elements || vector` -> `vector?.elements && vector`
+Mutant #110 [logical] [102:15-102:41] `vector?.elements || vector` -> `vector?.elements ?? vector`
+Mutant #111 [opt-chain] [102:15-102:31] `vector?.elements` -> `vector.elements`
+Mutant #112 [cond] [103:7-103:61] `if (this.elements.length != V.length) { return null; }` -> `if (true) {
   return null;
 }`
-Mutant #112 [cond] [103:7-103:61] `if (this.elements.length != V.length) { return null; }` -> `if (false) {
+Mutant #113 [cond] [103:7-103:61] `if (this.elements.length != V.length) { return null; }` -> `if (false) {
   return null;
 }`
-Mutant #113 [equal] [103:11-103:43] `this.elements.length != V.length` -> `this.elements.length == V.length`
-Mutant #114 [equal] [103:11-103:43] `this.elements.length != V.length` -> `this.elements.length !== V.length`
-Mutant #115 [block] [103:45-103:61] `{ return null; }` -> `{}`
-Mutant #116 [block] [104:38-104:60] `{ return x - V[i-1]; }` -> `{}`
-Mutant #117 [arith] [104:47-104:57] `x - V[i-1]` -> `x + V[i - 1]`
-Mutant #118 [arith] [104:53-104:56] `i-1` -> `i + 1`
-Mutant #119 [block] [108:27-110:6] `{ ... }` -> `{}`
-Mutant #120 [block] [109:35-109:50] `{ return x*k; }` -> `{}`
-Mutant #121 [arith] [109:44-109:47] `x*k` -> `x / k`
-Mutant #122 [arith] [109:44-109:47] `x*k` -> `x % k`
-Mutant #123 [block] [114:27-123:6] `{ ... }` -> `{}`
-Mutant #124 [logical] [115:15-115:41] `vector?.elements || vector` -> `vector?.elements && vector`
-Mutant #125 [logical] [115:15-115:41] `vector?.elements || vector` -> `vector?.elements ?? vector`
-Mutant #126 [opt-chain] [115:15-115:31] `vector?.elements` -> `vector.elements`
-Mutant #127 [cond] [117:7-117:42] `if (n != V.length) { return null; }` -> `if (true) {
+Mutant #114 [equal] [103:11-103:43] `this.elements.length != V.length` -> `this.elements.length == V.length`
+Mutant #115 [equal] [103:11-103:43] `this.elements.length != V.length` -> `this.elements.length !== V.length`
+Mutant #116 [block] [103:45-103:61] `{ return null; }` -> `{}`
+Mutant #117 [block] [104:38-104:60] `{ return x - V[i-1]; }` -> `{}`
+Mutant #118 [arith] [104:47-104:57] `x - V[i-1]` -> `x + V[i - 1]`
+Mutant #119 [arith] [104:53-104:56] `i-1` -> `i + 1`
+Mutant #120 [block] [108:27-110:6] `{ ... }` -> `{}`
+Mutant #121 [block] [109:35-109:50] `{ return x*k; }` -> `{}`
+Mutant #122 [arith] [109:44-109:47] `x*k` -> `x / k`
+Mutant #123 [arith] [109:44-109:47] `x*k` -> `x % k`
+Mutant #124 [block] [114:27-123:6] `{ ... }` -> `{}`
+Mutant #125 [logical] [115:15-115:41] `vector?.elements || vector` -> `vector?.elements && vector`
+Mutant #126 [logical] [115:15-115:41] `vector?.elements || vector` -> `vector?.elements ?? vector`
+Mutant #127 [opt-chain] [115:15-115:31] `vector?.elements` -> `vector.elements`
+Mutant #128 [cond] [117:7-117:42] `if (n != V.length) { return null; }` -> `if (true) {
   return null;
 }`
-Mutant #128 [cond] [117:7-117:42] `if (n != V.length) { return null; }` -> `if (false) {
+Mutant #129 [cond] [117:7-117:42] `if (n != V.length) { return null; }` -> `if (false) {
   return null;
 }`
-Mutant #129 [equal] [117:11-117:24] `n != V.length` -> `n == V.length`
-Mutant #130 [equal] [117:11-117:24] `n != V.length` -> `n !== V.length`
-Mutant #131 [block] [117:26-117:42] `{ return null; }` -> `{}`
-Mutant #132 [cond] [118:7-121:21] `do {
+Mutant #130 [equal] [117:11-117:24] `n != V.length` -> `n == V.length`
+Mutant #131 [equal] [117:11-117:24] `n != V.length` -> `n !== V.length`
+Mutant #132 [block] [117:26-117:42] `{ return null; }` -> `{}`
+Mutant #133 [cond] [118:7-121:21] `do {
   product += this.elements[n-1] * V[n-1];
   __assert__(0 < n && n <= this.elements.length);
 } while (--n);` -> `do {
   product += this.elements[n - 1] * V[n - 1];
   __assert__(0 < n && n <= this.elements.length);
 } while (false);`
-Mutant #133 [update] [121:16-121:19] `--n` -> `n--`
-Mutant #134 [update] [121:16-121:19] `--n` -> `++n`
-Mutant #135 [block] [118:10-121:8] `{ ... }` -> `{}`
-Mutant #136 [assign] [119:9-119:47] `product += this.elements[n-1] * V[n-1]` -> `product -= this.elements[n - 1] * V[n - 1]`
-Mutant #137 [arith] [119:20-119:47] `this.elements[n-1] * V[n-1]` -> `this.elements[n - 1] / V[n - 1]`
-Mutant #138 [arith] [119:20-119:47] `this.elements[n-1] * V[n-1]` -> `this.elements[n - 1] % V[n - 1]`
-Mutant #139 [arith] [119:34-119:37] `n-1` -> `n + 1`
-Mutant #140 [arith] [119:43-119:46] `n-1` -> `n + 1`
-Mutant #141 [block] [127:29-136:6] `{ ... }` -> `{}`
-Mutant #142 [logical] [128:15-128:41] `vector?.elements || vector` -> `vector?.elements && vector`
-Mutant #143 [logical] [128:15-128:41] `vector?.elements || vector` -> `vector?.elements ?? vector`
-Mutant #144 [opt-chain] [128:15-128:31] `vector?.elements` -> `vector.elements`
-Mutant #145 [cond] [129:7-129:71] `if (this.elements.length != 3 || B.length != 3) { return null; }` -> `if (true) {
+Mutant #134 [update] [121:16-121:19] `--n` -> `n--`
+Mutant #135 [update] [121:16-121:19] `--n` -> `++n`
+Mutant #136 [block] [118:10-121:8] `{ ... }` -> `{}`
+Mutant #137 [assign] [119:9-119:47] `product += this.elements[n-1] * V[n-1]` -> `product -= this.elements[n - 1] * V[n - 1]`
+Mutant #138 [arith] [119:20-119:47] `this.elements[n-1] * V[n-1]` -> `this.elements[n - 1] / V[n - 1]`
+Mutant #139 [arith] [119:20-119:47] `this.elements[n-1] * V[n-1]` -> `this.elements[n - 1] % V[n - 1]`
+Mutant #140 [arith] [119:34-119:37] `n-1` -> `n + 1`
+Mutant #141 [arith] [119:43-119:46] `n-1` -> `n + 1`
+Mutant #142 [block] [127:29-136:6] `{ ... }` -> `{}`
+Mutant #143 [logical] [128:15-128:41] `vector?.elements || vector` -> `vector?.elements && vector`
+Mutant #144 [logical] [128:15-128:41] `vector?.elements || vector` -> `vector?.elements ?? vector`
+Mutant #145 [opt-chain] [128:15-128:31] `vector?.elements` -> `vector.elements`
+Mutant #146 [cond] [129:7-129:71] `if (this.elements.length != 3 || B.length != 3) { return null; }` -> `if (true) {
   return null;
 }`
-Mutant #146 [cond] [129:7-129:71] `if (this.elements.length != 3 || B.length != 3) { return null; }` -> `if (false) {
+Mutant #147 [cond] [129:7-129:71] `if (this.elements.length != 3 || B.length != 3) { return null; }` -> `if (false) {
   return null;
 }`
-Mutant #147 [logical] [129:11-129:53] `this.elements.length != 3 || B.length != 3` -> `this.elements.length != 3 && B.length != 3`
-Mutant #148 [logical] [129:11-129:53] `this.elements.length != 3 || B.length != 3` -> `this.elements.length != 3 ?? B.length != 3`
-Mutant #149 [equal] [129:11-129:36] `this.elements.length != 3` -> `this.elements.length == 3`
-Mutant #150 [equal] [129:11-129:36] `this.elements.length != 3` -> `this.elements.length !== 3`
-Mutant #151 [equal] [129:40-129:53] `B.length != 3` -> `B.length == 3`
-Mutant #152 [equal] [129:40-129:53] `B.length != 3` -> `B.length !== 3`
-Mutant #153 [block] [129:55-129:71] `{ return null; }` -> `{}`
-Mutant #154 [array] [131:28-135:8] `[
+Mutant #148 [logical] [129:11-129:53] `this.elements.length != 3 || B.length != 3` -> `this.elements.length != 3 && B.length != 3`
+Mutant #149 [logical] [129:11-129:53] `this.elements.length != 3 || B.length != 3` -> `this.elements.length != 3 ?? B.length != 3`
+Mutant #150 [equal] [129:11-129:36] `this.elements.length != 3` -> `this.elements.length == 3`
+Mutant #151 [equal] [129:11-129:36] `this.elements.length != 3` -> `this.elements.length !== 3`
+Mutant #152 [equal] [129:40-129:53] `B.length != 3` -> `B.length == 3`
+Mutant #153 [equal] [129:40-129:53] `B.length != 3` -> `B.length !== 3`
+Mutant #154 [block] [129:55-129:71] `{ return null; }` -> `{}`
+Mutant #155 [array] [131:28-135:8] `[
   (A[1] * B[2]) - (A[2] * B[1]),
   (A[2] * B[0]) - (A[0] * B[2]),
   (A[0] * B[1]) - (A[1] * B[0])
 ]` -> `[]`
-Mutant #155 [arith] [132:9-132:38] `(A[1] * B[2]) - (A[2] * B[1])` -> `A[1] * B[2] + A[2] * B[1]`
-Mutant #156 [arith] [132:10-132:21] `A[1] * B[2]` -> `A[1] / B[2]`
-Mutant #157 [arith] [132:10-132:21] `A[1] * B[2]` -> `A[1] % B[2]`
-Mutant #158 [arith] [132:26-132:37] `A[2] * B[1]` -> `A[2] / B[1]`
-Mutant #159 [arith] [132:26-132:37] `A[2] * B[1]` -> `A[2] % B[1]`
-Mutant #160 [arith] [133:9-133:38] `(A[2] * B[0]) - (A[0] * B[2])` -> `A[2] * B[0] + A[0] * B[2]`
-Mutant #161 [arith] [133:10-133:21] `A[2] * B[0]` -> `A[2] / B[0]`
-Mutant #162 [arith] [133:10-133:21] `A[2] * B[0]` -> `A[2] % B[0]`
-Mutant #163 [arith] [133:26-133:37] `A[0] * B[2]` -> `A[0] / B[2]`
-Mutant #164 [arith] [133:26-133:37] `A[0] * B[2]` -> `A[0] % B[2]`
-Mutant #165 [arith] [134:9-134:38] `(A[0] * B[1]) - (A[1] * B[0])` -> `A[0] * B[1] + A[1] * B[0]`
-Mutant #166 [arith] [134:10-134:21] `A[0] * B[1]` -> `A[0] / B[1]`
-Mutant #167 [arith] [134:10-134:21] `A[0] * B[1]` -> `A[0] % B[1]`
-Mutant #168 [arith] [134:26-134:37] `A[1] * B[0]` -> `A[1] / B[0]`
-Mutant #169 [arith] [134:26-134:37] `A[1] * B[0]` -> `A[1] % B[0]`
-Mutant #170 [block] [139:21-146:6] `{ ... }` -> `{}`
-Mutant #171 [cond] [141:7-144:21] `do { i = k - n;
+Mutant #156 [arith] [132:9-132:38] `(A[1] * B[2]) - (A[2] * B[1])` -> `A[1] * B[2] + A[2] * B[1]`
+Mutant #157 [arith] [132:10-132:21] `A[1] * B[2]` -> `A[1] / B[2]`
+Mutant #158 [arith] [132:10-132:21] `A[1] * B[2]` -> `A[1] % B[2]`
+Mutant #159 [arith] [132:26-132:37] `A[2] * B[1]` -> `A[2] / B[1]`
+Mutant #160 [arith] [132:26-132:37] `A[2] * B[1]` -> `A[2] % B[1]`
+Mutant #161 [arith] [133:9-133:38] `(A[2] * B[0]) - (A[0] * B[2])` -> `A[2] * B[0] + A[0] * B[2]`
+Mutant #162 [arith] [133:10-133:21] `A[2] * B[0]` -> `A[2] / B[0]`
+Mutant #163 [arith] [133:10-133:21] `A[2] * B[0]` -> `A[2] % B[0]`
+Mutant #164 [arith] [133:26-133:37] `A[0] * B[2]` -> `A[0] / B[2]`
+Mutant #165 [arith] [133:26-133:37] `A[0] * B[2]` -> `A[0] % B[2]`
+Mutant #166 [arith] [134:9-134:38] `(A[0] * B[1]) - (A[1] * B[0])` -> `A[0] * B[1] + A[1] * B[0]`
+Mutant #167 [arith] [134:10-134:21] `A[0] * B[1]` -> `A[0] / B[1]`
+Mutant #168 [arith] [134:10-134:21] `A[0] * B[1]` -> `A[0] % B[1]`
+Mutant #169 [arith] [134:26-134:37] `A[1] * B[0]` -> `A[1] / B[0]`
+Mutant #170 [arith] [134:26-134:37] `A[1] * B[0]` -> `A[1] % B[0]`
+Mutant #171 [block] [139:21-146:6] `{ ... }` -> `{}`
+Mutant #172 [cond] [141:7-144:21] `do { i = k - n;
   if (this.elements[i] > m) { m = this.elements[i]; }
   __assert__(0 < n && n <= this.elements.length);
 } while (--n);` -> `do {
@@ -239,21 +240,21 @@ Mutant #171 [cond] [141:7-144:21] `do { i = k - n;
   }
   __assert__(0 < n && n <= this.elements.length);
 } while (false);`
-Mutant #172 [update] [144:16-144:19] `--n` -> `n--`
-Mutant #173 [update] [144:16-144:19] `--n` -> `++n`
-Mutant #174 [block] [141:10-144:8] `{ ... }` -> `{}`
-Mutant #175 [arith] [141:16-141:21] `k - n` -> `k + n`
-Mutant #176 [cond] [142:9-142:60] `if (this.elements[i] > m) { m = this.elements[i]; }` -> `if (true) {
+Mutant #173 [update] [144:16-144:19] `--n` -> `n--`
+Mutant #174 [update] [144:16-144:19] `--n` -> `++n`
+Mutant #175 [block] [141:10-144:8] `{ ... }` -> `{}`
+Mutant #176 [arith] [141:16-141:21] `k - n` -> `k + n`
+Mutant #177 [cond] [142:9-142:60] `if (this.elements[i] > m) { m = this.elements[i]; }` -> `if (true) {
   m = this.elements[i];
 }`
-Mutant #177 [cond] [142:9-142:60] `if (this.elements[i] > m) { m = this.elements[i]; }` -> `if (false) {
+Mutant #178 [cond] [142:9-142:60] `if (this.elements[i] > m) { m = this.elements[i]; }` -> `if (false) {
   m = this.elements[i];
 }`
-Mutant #178 [equal] [142:13-142:33] `this.elements[i] > m` -> `this.elements[i] >= m`
-Mutant #179 [equal] [142:13-142:33] `this.elements[i] > m` -> `this.elements[i] <= m`
-Mutant #180 [block] [142:35-142:60] `{ m = this.elements[i]; }` -> `{}`
-Mutant #181 [block] [149:26-158:6] `{ ... }` -> `{}`
-Mutant #182 [cond] [151:7-156:21] `do { i = k - n;
+Mutant #179 [equal] [142:13-142:33] `this.elements[i] > m` -> `this.elements[i] >= m`
+Mutant #180 [equal] [142:13-142:33] `this.elements[i] > m` -> `this.elements[i] <= m`
+Mutant #181 [block] [142:35-142:60] `{ m = this.elements[i]; }` -> `{}`
+Mutant #182 [block] [149:26-158:6] `{ ... }` -> `{}`
+Mutant #183 [cond] [151:7-156:21] `do { i = k - n;
   if (index === null && this.elements[i] == x) {
     index = i + 1;
   }
@@ -265,64 +266,64 @@ Mutant #182 [cond] [151:7-156:21] `do { i = k - n;
   }
   __assert__(0 < n && n <= this.elements.length);
 } while (false);`
-Mutant #183 [update] [156:16-156:19] `--n` -> `n--`
-Mutant #184 [update] [156:16-156:19] `--n` -> `++n`
-Mutant #185 [block] [151:10-156:8] `{ ... }` -> `{}`
-Mutant #186 [arith] [151:16-151:21] `k - n` -> `k + n`
-Mutant #187 [cond] [152:9-154:10] `if (index === null && this.elements[i] == x) {
+Mutant #184 [update] [156:16-156:19] `--n` -> `n--`
+Mutant #185 [update] [156:16-156:19] `--n` -> `++n`
+Mutant #186 [block] [151:10-156:8] `{ ... }` -> `{}`
+Mutant #187 [arith] [151:16-151:21] `k - n` -> `k + n`
+Mutant #188 [cond] [152:9-154:10] `if (index === null && this.elements[i] == x) {
   index = i + 1;
 }` -> `if (true) {
   index = i + 1;
 }`
-Mutant #188 [cond] [152:9-154:10] `if (index === null && this.elements[i] == x) {
+Mutant #189 [cond] [152:9-154:10] `if (index === null && this.elements[i] == x) {
   index = i + 1;
 }` -> `if (false) {
   index = i + 1;
 }`
-Mutant #189 [logical] [152:13-152:52] `index === null && this.elements[i] == x` -> `index === null || this.elements[i] == x`
-Mutant #190 [logical] [152:13-152:52] `index === null && this.elements[i] == x` -> `index === null ?? this.elements[i] == x`
-Mutant #191 [equal] [152:13-152:27] `index === null` -> `index !== null`
-Mutant #192 [equal] [152:31-152:52] `this.elements[i] == x` -> `this.elements[i] != x`
-Mutant #193 [equal] [152:31-152:52] `this.elements[i] == x` -> `this.elements[i] === x`
-Mutant #194 [block] [152:54-154:10] `{
+Mutant #190 [logical] [152:13-152:52] `index === null && this.elements[i] == x` -> `index === null || this.elements[i] == x`
+Mutant #191 [logical] [152:13-152:52] `index === null && this.elements[i] == x` -> `index === null ?? this.elements[i] == x`
+Mutant #192 [equal] [152:13-152:27] `index === null` -> `index !== null`
+Mutant #193 [equal] [152:31-152:52] `this.elements[i] == x` -> `this.elements[i] != x`
+Mutant #194 [equal] [152:31-152:52] `this.elements[i] == x` -> `this.elements[i] === x`
+Mutant #195 [block] [152:54-154:10] `{
   index = i + 1;
 }` -> `{}`
-Mutant #195 [arith] [153:19-153:24] `i + 1` -> `i - 1`
-Mutant #196 [block] [161:33-171:6] `{ ... }` -> `{}`
-Mutant #197 [cond] [162:7-162:57] `if (obj.anchor) { return obj.distanceFrom(this); }` -> `if (true) {
+Mutant #196 [arith] [153:19-153:24] `i + 1` -> `i - 1`
+Mutant #197 [block] [161:33-171:6] `{ ... }` -> `{}`
+Mutant #198 [cond] [162:7-162:57] `if (obj.anchor) { return obj.distanceFrom(this); }` -> `if (true) {
   return obj.distanceFrom(this);
 }`
-Mutant #198 [cond] [162:7-162:57] `if (obj.anchor) { return obj.distanceFrom(this); }` -> `if (false) {
+Mutant #199 [cond] [162:7-162:57] `if (obj.anchor) { return obj.distanceFrom(this); }` -> `if (false) {
   return obj.distanceFrom(this);
 }`
-Mutant #199 [block] [162:23-162:57] `{ return obj.distanceFrom(this); }` -> `{}`
-Mutant #200 [logical] [163:15-163:34] `obj.elements || obj` -> `obj.elements && obj`
-Mutant #201 [logical] [163:15-163:34] `obj.elements || obj` -> `obj.elements ?? obj`
-Mutant #202 [cond] [164:7-164:61] `if (V.length != this.elements.length) { return null; }` -> `if (true) {
+Mutant #200 [block] [162:23-162:57] `{ return obj.distanceFrom(this); }` -> `{}`
+Mutant #201 [logical] [163:15-163:34] `obj.elements || obj` -> `obj.elements && obj`
+Mutant #202 [logical] [163:15-163:34] `obj.elements || obj` -> `obj.elements ?? obj`
+Mutant #203 [cond] [164:7-164:61] `if (V.length != this.elements.length) { return null; }` -> `if (true) {
   return null;
 }`
-Mutant #203 [cond] [164:7-164:61] `if (V.length != this.elements.length) { return null; }` -> `if (false) {
+Mutant #204 [cond] [164:7-164:61] `if (V.length != this.elements.length) { return null; }` -> `if (false) {
   return null;
 }`
-Mutant #204 [equal] [164:11-164:43] `V.length != this.elements.length` -> `V.length == this.elements.length`
-Mutant #205 [equal] [164:11-164:43] `V.length != this.elements.length` -> `V.length !== this.elements.length`
-Mutant #206 [block] [164:45-164:61] `{ return null; }` -> `{}`
-Mutant #207 [block] [166:32-169:8] `{
+Mutant #205 [equal] [164:11-164:43] `V.length != this.elements.length` -> `V.length == this.elements.length`
+Mutant #206 [equal] [164:11-164:43] `V.length != this.elements.length` -> `V.length !== this.elements.length`
+Mutant #207 [block] [164:45-164:61] `{ return null; }` -> `{}`
+Mutant #208 [block] [166:32-169:8] `{
   part = x - V[i-1];
   sum += part * part;
 }` -> `{}`
-Mutant #208 [arith] [167:16-167:26] `x - V[i-1]` -> `x + V[i - 1]`
-Mutant #209 [arith] [167:22-167:25] `i-1` -> `i + 1`
-Mutant #210 [assign] [168:9-168:27] `sum += part * part` -> `sum -= part * part`
-Mutant #211 [arith] [168:16-168:27] `part * part` -> `part / part`
-Mutant #212 [arith] [168:16-168:27] `part * part` -> `part % part`
-Mutant #213 [block] [174:28-176:6] `{
+Mutant #209 [arith] [167:16-167:26] `x - V[i-1]` -> `x + V[i - 1]`
+Mutant #210 [arith] [167:22-167:25] `i-1` -> `i + 1`
+Mutant #211 [assign] [168:9-168:27] `sum += part * part` -> `sum -= part * part`
+Mutant #212 [arith] [168:16-168:27] `part * part` -> `part / part`
+Mutant #213 [arith] [168:16-168:27] `part * part` -> `part % part`
+Mutant #214 [block] [174:28-176:6] `{
   return `[${this.elements.join(', ')}]`;
 }` -> `{}`
-Mutant #214 [string] [175:14-175:45] ``[${this.elements.join(', ')}]`` -> ````
-Mutant #215 [string] [175:37-175:41] `', '` -> `""`
-Mutant #216 [block] [179:32-182:6] `{ ... }` -> `{}`
-Mutant #217 [logical] [180:24-180:61] `els?.elements?.slice() ?? els.slice()` -> `els?.elements?.slice() && els.slice()`
-Mutant #218 [logical] [180:24-180:61] `els?.elements?.slice() ?? els.slice()` -> `els?.elements?.slice() || els.slice()`
-Mutant #219 [opt-chain] [180:24-180:46] `els?.elements?.slice()` -> `els.elements.slice()`
-Mutant #220 [block] [186:25-189:4] `{ ... }` -> `{}`
+Mutant #215 [string] [175:14-175:45] ``[${this.elements.join(', ')}]`` -> ````
+Mutant #216 [string] [175:37-175:41] `', '` -> `""`
+Mutant #217 [block] [179:32-182:6] `{ ... }` -> `{}`
+Mutant #218 [logical] [180:24-180:61] `els?.elements?.slice() ?? els.slice()` -> `els?.elements?.slice() && els.slice()`
+Mutant #219 [logical] [180:24-180:61] `els?.elements?.slice() ?? els.slice()` -> `els?.elements?.slice() || els.slice()`
+Mutant #220 [opt-chain] [180:24-180:46] `els?.elements?.slice()` -> `els.elements.slice()`
+Mutant #221 [block] [186:25-189:4] `{ ... }` -> `{}`

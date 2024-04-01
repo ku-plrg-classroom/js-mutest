@@ -359,6 +359,11 @@ replacing the optional chaining operators with another one:
 | Optional Chaining Computed Member Access to Non-Optional       | `x?.[y]`                 | `x[y]`                   |
 | Optional Chaining Call to Non-Optional                         | `x?.()`                  | `x()`                    |
 
+> [!CAUTION]
+>
+> You need to remove all sequential optional chaining operators at once. For
+> example, `x?.y?.[z]?.()` should be mutated to `x.y[z]()`.
+
 
 ### String Literals
 
@@ -369,11 +374,9 @@ with the string literals (or template literals) whose contents are `__PLRG__`:
 
 | Operator Description                                           | Original                 | Mutant                   |
 | -------------------------------------------------------------- | :----------------------: | :----------------------: |
-| String Literal with Single Quotes to Empty String              | `'hello'`                | `''`                     |
-| String Literal with Double Quotes to Empty String              | `"hello"`                | `""`                     |
+| String Literal to Empty String                                 | `"hello"`                | `""`                     |
 | Template Literal to Empty Template Literal                     | ``` `(${x} + 1)` ```     | ```` `` ````             |
-| Empty String with Single Quotes to String Literal              | `''`                     | `'__PLRG__'`             |
-| Empty String with Double Quotes to String Literal              | `""`                     | `"__PLRG__"`             |
+| Empty String to String Literal                                 | `""`                     | `"__PLRG__"`             |
 | Empty Template Literal to Template Literal                     | ``` `` ```               | ``` `__PLRG__` ```       |
 
 <!-- `` -->
